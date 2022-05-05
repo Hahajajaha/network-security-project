@@ -8,21 +8,39 @@
   ],
   "signupUsers": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "firstname": "test1",
+      "lastname": "test1",
+      "email": "test1@123.com",
+      "password": "123456",
+      "confirmedPassword": "123456",
+      "id": 1
     },
     {
-      "username": "hexuan",
-      "email": "hexuan@gmail.com",
+      "firstname": "123123",
+      "lastname": "123123",
+      "dateofbirth": "11/11/2000",
+      "email": "123@gmail.com",
       "password": "123123",
+      "confirmedPassword": "123123",
       "id": 2
     },
     {
-      "username": "hehehexuanxuanxuan",
-      "email": "123@gmail.com",
-      "password": "123123",
+      "firstname": "hexuan",
+      "lastname": "wang",
+      "dateofbirth": "01/10/2000",
+      "email": "3456@gmail.com",
+      "password": "3456Aa@",
+      "confirmedPassword": "3456Aa@",
       "id": 3
+    },
+    {
+      "firstname": "hehexuan",
+      "lastname": "wang",
+      "dateofbirth": "01/01/2000",
+      "email": "hehehe@gmail.com",
+      "password": "zxc111A@",
+      "confirmedPassword": "zxc111A@",
+      "id": 4
     }
   ]
 }

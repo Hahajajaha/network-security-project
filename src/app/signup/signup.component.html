@@ -1,74 +1,75 @@
 <mat-card>
-    <mat-card-content>
-      <div class="header">
-        <P>Sign Up Your Account </P>
+  <mat-card-content>
+    <div class="header">
+      <P>Sign Up Your Account </P>
+    </div>
+    <form (ngSubmit)="onSignup()" name="signupForm" [formGroup]="signupForm">
+
+      <div class="firstnameInput">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Firstname</mat-label>
+          <input formControlName="firstname" matInput placeholder="Firstname" required />
+          <mat-error *ngIf="!signupForm.controls['firstname'].valid">First name is required</mat-error>
+        </mat-form-field>
       </div>
-      <form (ngSubmit)="onSignup()" name="signupForm" [formGroup]="signupForm">
 
-        <div class="firstnameInput">
-            <mat-form-field class="full-width" appearance="outline">
-              <mat-label>Firstname</mat-label>
-              <input
-                formControlName="firstname"
-                matInput
-                placeholder="Firstname" required/>
-              <mat-error *ngIf="!signupForm.controls['firstname'].valid">First name is required</mat-error>
-            </mat-form-field>
-        </div>
+      <div class="lastnameInput">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Lastname</mat-label>
+          <input formControlName="lastname" matInput placeholder="Lastname" required />
+          <mat-error *ngIf="!signupForm.controls['lastname'].valid">
+            Lastname is required
+          </mat-error>
+        </mat-form-field>
+      </div>
 
-        <div class="lastnameInput">
-            <mat-form-field class="full-width" appearance="outline">
-              <mat-label>Lastname</mat-label>
-              <input
-                formControlName="lastname"
-                matInput
-                placeholder="Lastname" required/>
-              <mat-error *ngIf="!signupForm.controls['lastname'].valid">
-                Lastname is required
-                </mat-error>
-            </mat-form-field>
-        </div>
+      <div class="dateofbirthInput">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Date of birth</mat-label>
+          <input formControlName="dateofbirth" matInput placeholder="MM/DD/YYYY" required />
+          <mat-error *ngIf="!signupForm.controls['dateofbirth'].valid">
+            Date of birth is required
+          </mat-error>
+        </mat-form-field>
+      </div>
 
-          <div class="emailInput">
-            <mat-form-field class="full-width" appearance="outline">
-              <mat-label>Email</mat-label>
-              <input formControlName="email" matInput placeholder="Email" required />
-              <mat-error *ngIf="!signupForm.controls['email'].valid">
-                  Email is required
-                </mat-error>
-            </mat-form-field>
-          </div>
+      <div class="emailInput">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput placeholder="Email" required />
+          <mat-error *ngIf="!signupForm.controls['email'].valid">
+            Email is required
+          </mat-error>
+        </mat-form-field>
+      </div>
 
-        <div class="passwordInput">
-          <mat-form-field class="full-width" appearance="outline">
-            <mat-label>Password</mat-label>
-            <input
-              formControlName="password"
-              matInput
-              (input) = onPasswordInput();
-              placeholder="Password"
-              required/>
-            <mat-error *ngIf="password!.hasError('required')">Password is required</mat-error>
-            <mat-error *ngIf="password!.hasError('minlength')">Password must have at least 6 characters</mat-error>
-          </mat-form-field>
-        </div>
+      <div class="passwordInput">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input formControlName="password" matInput placeholder="Password" required />
+          <mat-error *ngIf="password!.hasError('required')">Password is required</mat-error>
+          <mat-error *ngIf="password!.hasError('minlength')">Password must have at least 6 characters</mat-error>
+          <mat-error *ngIf="password!.hasError('hasNumber')">Password should has at least 1 number</mat-error>
+          <mat-error *ngIf="password!.hasError('hasCapitalCase')">Password should has at least 1 capital case
+          </mat-error>
+          <mat-error *ngIf="password!.hasError('hasSmallCase')">Password should has at least 1 small case</mat-error>
+          <mat-error *ngIf="password!.hasError('hasSpecialCase')">Password should has at least 1 special case
+          </mat-error>
+        </mat-form-field>
+      </div>
 
-        <div class="passwordInput">
-          <mat-form-field class="full-width" appearance="outline">
-            <mat-label>Confirm Password</mat-label>
-            <input
-              formControlName="confirmedPassword"
-              matInput
-              placeholder="Password"
-              required/>
-            <mat-error *ngIf="!signupForm.hasError('passwordMismatch')">Confirmed password doesn't match</mat-error>
-          </mat-form-field>
-        </div>
+      <div class="passwordInput">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Confirm Password</mat-label>
+          <input formControlName="confirmedPassword" matInput placeholder="Password" required />
+          <mat-error *ngIf="!signupForm.hasError('passwordMismatch')">Confirmed password doesn't match</mat-error>
+        </mat-form-field>
+      </div>
 
 
-        <button mat-flat-button color="primary">Signup</button>
-      </form>
-      <a style="color:rgb(13, 14, 14); margin-top:10px" routerLink="/login">Already registered? Click to login</a>
+      <button mat-flat-button color="primary">Signup</button>
+    </form>
+    <a style="color:rgb(13, 14, 14); margin-top:10px" routerLink="/login">Already registered? Click to login</a>
 
-    </mat-card-content>
-  </mat-card>
+  </mat-card-content>
+</mat-card>
